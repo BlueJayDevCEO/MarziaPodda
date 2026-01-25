@@ -30,7 +30,7 @@ const HowItWorks: React.FC = () => {
             <div className="space-y-4">
               <h4 className="text-xl font-serif text-brand-text border-b border-brand-mist pb-2">Relational Focus</h4>
               <p className="text-sm text-brand-text/70 leading-relaxed">
-                Therapy is a relational process. By observing how we interact within the therapeutic space, we gain a unique laboratory to understand and rework the relational patterns you experience in the outside world.
+                Therapy is a relational process. By observing how we interact within the therapeutic space, we gain a unique instrument to understand and rework the relational patterns you experience in the outside world.
               </p>
             </div>
             <div className="space-y-4">
