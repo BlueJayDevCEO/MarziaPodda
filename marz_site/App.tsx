@@ -7,7 +7,6 @@ import About from './components/About';
 import HowItWorks from './components/HowItWorks';
 import WhatToExpect from './components/WhatToExpect';
 import Specialisms from './components/Specialisms';
-import Fees from './components/Fees';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './components/Privacy';
@@ -52,9 +51,7 @@ const App: React.FC = () => {
         <About />
         <HowItWorks />
         <WhatToExpect />
-        <Specialisms />
-        <Fees />
-        <Contact />
+        <Specialisms />        <Contact />
       </main>
       <Footer />
     </div>

@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Information</h5>
             <ul className="text-xs space-y-4">
               <li><a href="#privacy" className="hover:text-white transition-colors">Privacy & Data Policy</a></li>
-              <li><a href="#fees" className="hover:text-white transition-colors">Clinical Framework</a></li>
+              <li><a href="#how-it-works" className="hover:text-white transition-colors">Approach</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Emergency Support</a></li>
               <li className="pt-2 text-[10px] text-white/30">&copy; {new Date().getFullYear()} Marzia Podda</li>
             </ul>
