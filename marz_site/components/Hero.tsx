@@ -20,8 +20,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-brand-text/70 leading-relaxed max-w-3xl mx-auto mb-16 stagger-2">
-            A reflective, confidential space in London & Online to explore emotional patterns, 
-            relationships, and inner experience with curiosity and depth.
+            <span className="block mb-4">Welcome</span>
+            <span className="block mb-4">Therapy can be a quiet place to breathe, to slow down, and to begin understanding what has been shaping your life.</span>
+            <span className="block mb-4">I’m a psychodynamic psychotherapist working with adults in the NHS, charities, and private practice, and I offer long-term psychotherapy for people who want depth, understanding, and real change. Sessions are available in person in London N19 and online.</span>
+            <span className="block mb-4">My work is rooted in the psychodynamic tradition, which means I’m interested in the deeper patterns that shape how we feel, relate, and make sense of ourselves. I pay attention to what is happening between us in the room, as well as what you bring from your life outside of therapy.</span>
+            <span className="block">If you’re feeling stuck, overwhelmed, or unsure of why things keep repeating, therapy can be a place to explore that safely, without pressure or judgement.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 stagger-3">

@@ -44,14 +44,7 @@ const About: React.FC = () => {
             <a href="#contact" className="px-8 py-3 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md">
               Enquire today
             </a>
-            <button 
-              className="px-8 py-3 bg-white text-brand-text/40 text-xs uppercase tracking-widest rounded-full cursor-not-allowed border border-brand-mist/30" 
-              disabled
-              title="Placeholder: Contact to request credentials"
-            >
-              CV (Available on request)
-            </button>
-          </div>
+</div>
         </div>
 
         <div className="order-1 lg:order-2">
