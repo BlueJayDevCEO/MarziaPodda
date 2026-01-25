@@ -20,7 +20,7 @@ const About: React.FC = () => {
             </p>
             <p>
               Having trained at the <strong className="text-brand-text font-semibold italic">Tavistock and Portman NHS Foundation Trust</strong>, 
-              my work is deeply rooted in the psychodynamic tradition,a depth-oriented approach that values curiosity, 
+              my work is deeply rooted in the psychodynamic tradition, a depth-oriented approach that values curiosity, 
               the exploration of the unconscious, and the relational dynamics that shape our lives.
             </p>
             <p>

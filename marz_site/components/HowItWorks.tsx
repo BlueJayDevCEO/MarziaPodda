@@ -24,7 +24,7 @@ const HowItWorks: React.FC = () => {
             <div className="space-y-4">
               <h4 className="text-xl font-serif text-brand-text border-b border-brand-mist pb-2">Early Dynamics</h4>
               <p className="text-sm text-brand-text/70 leading-relaxed">
-                Our earliest relationships create internal maps for how we connect with others. Understanding these "blueprints" allows us to see how the past is still present in our current relationship difficulties and self-image.
+                Our earliest relationships create internal maps for how we connect with others. Understanding these blueprints allows us to see how the past is still present in our current relationship difficulties and self-image.
               </p>
             </div>
             <div className="space-y-4">
@@ -36,7 +36,7 @@ const HowItWorks: React.FC = () => {
             <div className="space-y-4">
               <h4 className="text-xl font-serif text-brand-text border-b border-brand-mist pb-2">Meaning & Vitality</h4>
               <p className="text-sm text-brand-text/70 leading-relaxed">
-                Rather than just 'fixing' what is broken, this work aims for a richer sense of self. We work together to find new meanings and a greater sense of aliveness and authenticity in your life.
+                Rather than just fixing what is broken, this work aims for a richer sense of self. We work together to find new meanings and a greater sense of aliveness and authenticity in your life.
               </p>
             </div>
           </div>
