@@ -33,7 +33,7 @@ const WhatToExpect: React.FC = () => {
             <div className="space-y-5">
                <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
                 <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Clinical Hour</p>
-                <p className="text-brand-text text-sm italic">Typically 50 minutes </p>
+                <p className="text-brand-text text-sm italic">Typically 50 minutes (Editable by owner)</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
                 <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Availability</p>

@@ -20,7 +20,7 @@ const About: React.FC = () => {
             </p>
             <p>
               Having trained at the <strong className="text-brand-text font-semibold italic">Tavistock and Portman NHS Foundation Trust</strong>, 
-              my work is deeply rooted in the psychodynamic tradition, a depth-oriented approach that values curiosity, 
+              my work is deeply rooted in the psychodynamic tradition—a depth-oriented approach that values curiosity, 
               the exploration of the unconscious, and the relational dynamics that shape our lives.
             </p>
             <p>
@@ -44,7 +44,12 @@ const About: React.FC = () => {
             <a href="#contact" className="px-8 py-3 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md">
               Enquire today
             </a>
-</div>
+            <button 
+              className="px-8 py-3 bg-white text-brand-text/40 text-xs uppercase tracking-widest rounded-full cursor-not-allowed border border-brand-mist/30" 
+              disabled
+              title="Placeholder: Contact to request credentials"
+            >
+           </div>
         </div>
 
         <div className="order-1 lg:order-2">
