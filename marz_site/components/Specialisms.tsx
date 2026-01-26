@@ -2,16 +2,6 @@ import React from 'react';
 
 const specialisms = ["Anxiety", "Depression", "Relational Difficulties", "Personality Difficulties", "Trauma", "Loss and Bereavement"];
 
-const testimonials = [
-  {
-    text: "The space provided allowed me to understand cycles I had been trapped in for years. It felt safe and truly non-judgmental.",
-    attr: "Anonymised Patient Example (Placeholder)"
-  },
-  {
-    text: "Working through the roots of my anxiety has changed how I approach my daily life and my relationships with those closest to me.",
-    attr: "Anonymised Patient Example (Placeholder)"
-  }
-];
 
 const Specialisms: React.FC = () => {
   return (
