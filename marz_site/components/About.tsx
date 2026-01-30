@@ -49,7 +49,7 @@ const About: React.FC = () => {
               href="#contact"
               className="inline-flex px-8 py-3 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md"
             >
-              Enquire today
+              Arrange a consultation
             </a>
           </div>
         </div>

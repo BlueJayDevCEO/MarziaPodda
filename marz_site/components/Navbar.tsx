@@ -19,7 +19,8 @@ const Navbar: React.FC<NavbarProps> = ({ onHomeClick }) => {
   const navItems = [
     { name: 'About', href: '#about' },
     { name: 'Approach', href: '#how-it-works' },
-        { name: 'Contact', href: '#contact' },
+    { name: 'What to Expect', href: '#process' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = () => {
@@ -56,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ onHomeClick }) => {
             href="#contact" 
             className="px-6 py-2.5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-sm hover:shadow-md active:scale-95"
           >
-            Book Now
+            Arrange a Consultation
           </a>
         </div>
 

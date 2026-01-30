@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-brand-text/70 leading-relaxed max-w-3xl mx-auto mb-16 stagger-2">
-            A reflective, confidential space in London & Online to explore emotional patterns, 
+            A reflective, confidential space (online and in London N19) to explore emotional patterns,
             relationships, and inner experience with curiosity and depth.
           </p>
           
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
               href="#contact" 
               className="px-12 py-5 bg-brand-teal text-white text-sm uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all text-center shadow-lg hover:shadow-xl active:scale-95"
             >
-              Book a free 15-min consultation
+              Arrange a free 15‑min call
             </a>
             <a 
               href="#how-it-works" 

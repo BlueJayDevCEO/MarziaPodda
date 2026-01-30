@@ -50,6 +50,17 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
+            <div className="mt-14 grid sm:grid-cols-2 gap-6">
+              <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm hover:border-brand-teal transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Session Length</p>
+                <p className="text-brand-text text-sm italic">Typically 50 minutes.</p>
+              </div>
+              <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm hover:border-brand-teal transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Fees</p>
+                <p className="text-brand-text text-sm italic">Fees and arrangements are discussed and agreed in advance.</p>
+              </div>
+            </div>
+
             <div className="mt-20 p-8 bg-stone-50 border border-brand-mist/30 rounded-3xl relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-5">
                  <svg className="w-20 h-20 text-brand-teal" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>

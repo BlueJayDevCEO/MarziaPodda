@@ -31,13 +31,21 @@ const WhatToExpect: React.FC = () => {
               The therapeutic journey is unique to every individual. We begin with a collaborative exploration of your needs and the pace that feels safe and productive for you.
             </p>
             <div className="space-y-5">
-               <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
-                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Clinical Hour</p>
-                <p className="text-brand-text text-sm italic">Typically 50 minutes (Editable by owner)</p>
+              <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Session Length</p>
+                <p className="text-brand-text text-sm italic">Typically 50 minutes.</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
-                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Availability</p>
-                <p className="text-brand-text text-sm italic">Weekday and evening slots may be available.</p>
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Online Psychotherapy</p>
+                <p className="text-brand-text text-sm italic">Online sessions are available, wherever you are.</p>
+              </div>
+              <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Fees</p>
+                <p className="text-brand-text text-sm italic">Fees and arrangements are discussed and agreed in advance.</p>
+              </div>
+              <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Response Time</p>
+                <p className="text-brand-text text-sm italic">I reply personally, usually within 1–2 working days.</p>
               </div>
             </div>
           </div>
@@ -51,6 +59,15 @@ const WhatToExpect: React.FC = () => {
                   <p className="text-brand-text/70 leading-relaxed text-sm max-w-xl">{step.content}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-16">
+              <a
+                href="#contact"
+                className="inline-block border-b-2 border-brand-teal pb-1 text-xs uppercase tracking-widest text-brand-teal font-bold hover:text-brand-muted hover:border-brand-muted transition-all"
+              >
+                Arrange an initial consultation
+              </a>
             </div>
           </div>
         </div>

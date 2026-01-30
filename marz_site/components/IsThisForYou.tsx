@@ -53,6 +53,18 @@ const IsThisForYou: React.FC = () => {
           ))}
         </div>
 
+        <div className="mt-16 text-center">
+          <p className="text-brand-text/70 leading-relaxed max-w-2xl mx-auto mb-8">
+            If any of this resonates, we can begin with a brief, free 15‑minute call to see whether psychotherapy with me feels like a good fit.
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex px-10 py-4 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md hover:shadow-lg active:scale-95"
+          >
+            Arrange a call
+          </a>
+        </div>
+
         <div className="mt-20 p-10 rounded-3xl bg-brand-teal/5 border border-brand-teal/20 max-w-3xl mx-auto shadow-sm">
           <div className="flex items-start gap-6">
             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-teal shadow-sm flex-shrink-0">
