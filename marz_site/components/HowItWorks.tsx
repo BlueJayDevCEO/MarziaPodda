@@ -1,11 +1,11 @@
-import React from 'react';
+﻿import React from 'react';
 
 const HowItWorks: React.FC = () => {
   return (
     <section className="py-24 bg-white" id="how-it-works">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">The Clinical Approach</h2>
+          <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">How I Work</h2>
           <h3 className="text-4xl md:text-5xl font-serif text-brand-text">The Psychodynamic Path</h3>
         </div>
 
