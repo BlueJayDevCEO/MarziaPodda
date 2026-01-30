@@ -1,4 +1,4 @@
-﻿
+
 # Marzia Podda Psychotherapy Website
 
 A premium, modern, and high-trust landing page built for Marzia Podda, Psychodynamic Psychotherapist.
@@ -29,16 +29,16 @@ A premium, modern, and high-trust landing page built for Marzia Podda, Psychodyn
    - Update your DNS settings on Squarespace as instructed by Vercel.
 
    Typical DNS records (Vercel will confirm the exact values):
-   - `A` record: Host `@` â†’ `76.76.21.21`
-   - `CNAME`: Host `www` â†’ `cname.vercel-dns.com`
+   - `A` record: Host `@` → `76.76.21.21`
+   - `CNAME`: Host `www` → `cname.vercel-dns.com`
 
-   âš ï¸ If your domain is using email (MX/TXT records), do **not** delete those recordsâ€”only add the web records.
+   ⚠️ If your domain is using email (MX/TXT records), do **not** delete those records—only add the web records.
 
 ## Content Customization
 - **Fees**: Update the session fee placeholder in `components/Fees.tsx`.
 - **CV**: Upload your CV file to the public folder and update the link in `components/About.tsx`.
+- **Testimonials**: Replace placeholder text in `components/Specialisms.tsx` with compliant clinical feedback.
 - **Privacy Policy**: Fill in the data retention period placeholder in `components/Privacy.tsx`.
 
 ## Disclaimer
 This project is for informational purposes. If you are a practitioner, ensure the final content complies with your professional governing body's (BPC/UKCP/BACP) advertising guidelines.
-
