@@ -10,8 +10,11 @@ import Specialisms from './components/Specialisms';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './components/Privacy';
+import Held from './components/Held';
 
 const App: React.FC = () => {
+  const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+
   const [showPrivacy, setShowPrivacy] = useState(false);
 
   useEffect(() => {
@@ -29,6 +32,10 @@ const App: React.FC = () => {
     handleHash();
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  if (normalizedPath === '/held') {
+    return <Held />;
+  }
 
   if (showPrivacy) {
     return (
