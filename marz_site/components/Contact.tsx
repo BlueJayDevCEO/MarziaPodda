@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,12 +8,32 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [website, setWebsite] = useState('');
+  const submitting = useRef(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:poddapsychotherapy@gmail.com?subject=Therapy Enquiry from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nPreferred Format: ${formData.format}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+    if (submitting.current) return;
+    submitting.current = true;
+    setStatus('sending');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, website }),
+        signal: AbortSignal.timeout(20000),
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) throw new Error('Submission failed');
+      setFormData({ name: '', email: '', format: 'online', message: '' });
+      setWebsite('');
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    } finally {
+      submitting.current = false;
+    }
   };
 
   return (
@@ -35,7 +55,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-brand-teal font-bold mb-1">Email Enquiry</p>
-                  <a href="mailto:poddapsychotherapy@gmail.com" className="text-brand-text font-serif text-xl hover:text-brand-teal transition-colors">poddapsychotherapy@gmail.com</a>
+                  <a href="mailto:poddapsychotherapy@gmail.com" className="break-all text-brand-text font-serif text-xl hover:text-brand-teal transition-colors">poddapsychotherapy@gmail.com</a>
                 </div>
               </div>
 
@@ -82,16 +102,24 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-brand-soft p-10 md:p-14 rounded-[3.5rem] border border-brand-mist/50 shadow-xl relative">
+          <div className="bg-brand-soft p-6 sm:p-10 md:p-14 min-w-0 rounded-[3.5rem] border border-brand-mist/50 shadow-xl relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl -z-10" />
             
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} aria-busy={status === 'sending'}>
+              <fieldset disabled={status === 'sending'} className="space-y-8 min-w-0">
+              <div className="sr-only" aria-hidden="true">
+                <label htmlFor="website">Leave this field empty</label>
+                <input id="website" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+              </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Your Name</label>
                   <input 
                     type="text" 
                     id="name"
+                    name="name"
+                    autoComplete="name"
+                    maxLength={120}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
                     value={formData.name}
@@ -103,6 +131,9 @@ const Contact: React.FC = () => {
                   <input 
                     type="email" 
                     id="email"
+                    name="email"
+                    autoComplete="email"
+                    maxLength={254}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
                     value={formData.email}
@@ -133,6 +164,9 @@ const Contact: React.FC = () => {
                 <label htmlFor="message" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Enquiry Message</label>
                 <textarea 
                   id="message"
+                  name="message"
+                  required
+                  maxLength={5000}
                   rows={5}
                   className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm resize-none"
                   placeholder="Tell me a little about what brings you to therapy."
@@ -147,10 +181,16 @@ const Contact: React.FC = () => {
 
               <button 
                 type="submit"
+                disabled={status === 'sending'}
                 className="w-full py-5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-text transition-all shadow-xl hover:shadow-2xl active:scale-95 font-bold"
               >
-                Send Enquiry
+                {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
               </button>
+              </fieldset>
+              <div aria-live="polite" aria-atomic="true" className="mt-6 text-sm text-brand-text">
+                {status === 'success' && <p>Thank you. Your enquiry has been sent. Marzia will reply by email.</p>}
+                {status === 'error' && <p role="alert">Your enquiry could not be sent. Your details have been kept. Please try again or email <a className="underline break-all" href="mailto:poddapsychotherapy@gmail.com">poddapsychotherapy@gmail.com</a> directly.</p>}
+              </div>
             </form>
           </div>
         </div>
