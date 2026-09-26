@@ -33,7 +33,7 @@ const IsThisForYou: React.FC = () => {
 
         <div className="mt-16 text-center">
           <p className="text-brand-text/70 leading-relaxed max-w-2xl mx-auto mb-8">
-            If any of this resonates, we can begin with a brief, free 15â€‘minute call to see whether psychotherapy with me feels like a good fit.
+            If any of this resonates, we can begin with a brief, free 15-minute call to see whether psychotherapy with me feels like a good fit.
           </p>
           <a
             href="#contact"

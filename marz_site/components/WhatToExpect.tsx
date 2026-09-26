@@ -45,7 +45,7 @@ const WhatToExpect: React.FC = () => {
               </div>
               <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
                 <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Response Time</p>
-                <p className="text-brand-text text-sm italic">I reply personally, usually within 1â€“2 working days.</p>
+                <p className="text-brand-text text-sm italic">I reply personally, usually within 1-2 working days.</p>
               </div>
             </div>
           </div>
