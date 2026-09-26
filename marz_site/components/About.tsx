@@ -4,7 +4,7 @@ const About: React.FC = () => (
   <section className="marz-about py-24" id="about">
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div className="marz-portrait"><img src="/marz.jpg" alt="Marzia Podda" loading="lazy" /></div>
+        <div className="marz-portrait"><img src="/marzia-portrait.jpeg" alt="Marzia Podda" width="1086" height="1448" loading="lazy" /></div>
         <div>
           <h2 className="marz-eyebrow">About</h2>
           <h3 className="text-5xl md:text-6xl font-serif text-brand-text mb-8">Hi, I’m Marzia.</h3>

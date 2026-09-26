@@ -55,10 +55,11 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <IsThisForYou />
-        <About />
         <HowItWorks />
+        <Specialisms />
+        <About />
         <WhatToExpect />
-        <Specialisms />        <Contact />
+        <Contact />
       </main>
       <Footer />
     </div>
