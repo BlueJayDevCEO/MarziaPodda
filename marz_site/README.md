@@ -69,3 +69,20 @@ the error and retained form values. Keep the QR destination at
 
 ## Disclaimer
 This project is for informational purposes. If you are a practitioner, ensure the final content complies with your professional governing body's (BPC/UKCP/BACP) advertising guidelines.
+
+
+## Held design reference
+
+`public/held-mockup-original.jpg` is the unchanged 698 × 1536 image supplied by
+Marzia (`Desktop/Marzia/4808DED1-A74A-45D8-A458-F503EA443748.jpeg`). Desktop uses
+that exact composition, with responsive link regions over all four booking
+buttons and the navigation. Semantic headings and copy are available to screen
+readers; keyboard focus is visible on every link. This deliberately retains the
+supplied raster lettering and artwork instead of substituting fonts or icons.
+Its sharpness is limited by the supplied image resolution.
+
+At widths of 700px and below, the content reflows into a readable single-column
+layout using the original artwork, headings, icons and button crops. No separate
+mobile mockup was supplied. Forced-colour mode uses the readable content layout.
+The original QR poster is not modified. All booking links use the full canonical
+contact URL.
