@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
   if (showPrivacy) {
     return (
-      <div className="flex flex-col min-h-screen">
+      <div className="site-shell flex flex-col min-h-screen">
         <Navbar onHomeClick={() => window.location.hash = ''} />
         <main className="flex-grow pt-24">
           <Privacy />
@@ -50,7 +50,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="site-shell flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <Hero />

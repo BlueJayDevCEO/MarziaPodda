@@ -86,3 +86,14 @@ layout using the original artwork, headings, icons and button crops. No separate
 mobile mockup was supplied. Forced-colour mode uses the readable content layout.
 The original QR poster is not modified. All booking links use the full canonical
 contact URL.
+
+
+## Main-site brand brief
+
+The supplemental brief is applied as an evolution of the existing section
+structure: ivory/petrol-teal alternation, pink primary actions, aqua accents,
+a subtle Therapy with Marz signature, five consistent line-icon motifs, a
+warmer About introduction and three professional-standards cards. The formal
+Marzia Podda identity, qualifications, practical information, crisis guidance
+and existing section anchors remain. The campaign artwork stays on `/held`;
+the supplemental brief's earlier `/rope` name does not replace the QR route.

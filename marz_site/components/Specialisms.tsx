@@ -1,57 +1,19 @@
-﻿import React from "react";
-
+import React from 'react';
+import BrandIcon, { BrandIconKind } from './BrandIcon';
+const affirmations: { title: string; icon: BrandIconKind }[] = [
+  {title:'Queer-affirming',icon:'heart'},
+  {title:'Kink-aware',icon:'spiral'},
+  {title:'Neurodiversity-affirming',icon:'lotus'},
+  {title:'ENM & relationship-diverse',icon:'leaf'},
+];
 export default function Specialisms() {
-  return (
-    <section className="py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">
-          Areas I Work With
-        </h2>
-        <h3 className="text-4xl font-serif text-brand-text mb-8">
-          What I Can Help With
-        </h3>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm">
-            <h4 className="text-lg font-semibold text-brand-text mb-2">Anxiety & overwhelm</h4>
-            <p className="text-brand-text/80 leading-relaxed">
-              Persistent worry, stress, panic, or a sense of being stuck — especially when things look “fine” on the outside.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm">
-            <h4 className="text-lg font-semibold text-brand-text mb-2">Relationships & patterns</h4>
-            <p className="text-brand-text/80 leading-relaxed">
-              Repeating relationship dynamics, attachment difficulties, conflict, disconnection, or problems with boundaries.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm">
-            <h4 className="text-lg font-semibold text-brand-text mb-2">Low mood & self-worth</h4>
-            <p className="text-brand-text/80 leading-relaxed">
-              Feeling flat, unmotivated, critical of yourself, or struggling to feel hopeful or connected.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm">
-            <h4 className="text-lg font-semibold text-brand-text mb-2">Life transitions</h4>
-            <p className="text-brand-text/80 leading-relaxed">
-              Change, loss, identity questions, relocation, new roles, or periods where old coping strategies stop working.
-            </p>
-          </div>
-        </div>
-
-        <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">
-          Reflections
-        </h2>
-
-        <div className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm">
-          <p className="text-brand-text/80 leading-relaxed">
-            Psychotherapy can offer a steady space to understand what you’re carrying, notice repeating patterns,
-            and develop a different relationship with your thoughts, feelings, and relationships — at a pace that feels safe.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+  return <section className="site-section-dark py-24" id="different-ways-of-being">
+    <div className="max-w-5xl mx-auto px-6 text-center">
+      <p className="marz-eyebrow">Your whole self is welcome</p>
+      <h2 className="text-4xl md:text-5xl font-serif mb-8">A therapy space for different ways of being</h2>
+      <p className="text-lg leading-relaxed max-w-3xl mx-auto">A warm, confidential and non-judgemental space to explore the parts of your life that matter to you, at a pace that feels right. I welcome different ways of loving, relating, thinking and being.</p>
+      <div className="marz-affirmations">{affirmations.map(item=><div key={item.title}><BrandIcon kind={item.icon}/><h3>{item.title}</h3></div>)}</div>
+      <a className="marz-button" href="#contact">Arrange an introductory call <span aria-hidden="true">→</span></a>
+    </div>
+  </section>;
 }

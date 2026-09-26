@@ -10,11 +10,14 @@ export default {
     extend: {
       colors: {
         brand: {
-          teal: '#6FB7B7',
-          muted: '#8FCFC4',
-          mist: '#CFEAE6',
-          soft: '#F4FBFA',
-          text: '#1F2F33',
+          teal: '#07545A',
+          muted: '#14777B',
+          mist: '#C8DAD2',
+          soft: '#F7F1E8',
+          text: '#08292C',
+          petrol: '#002F35',
+          pink: '#F52E83',
+          aqua: '#25D5D0',
         },
       },
       fontFamily: {

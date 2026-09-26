@@ -37,12 +37,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white" id="contact">
+    <section className="marz-contact py-24" id="contact">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Start your journey</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-10">Request a Consultation</h3>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">London & Online</h2>
+            <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-10">Make space for more of yourself.</h3>
             <p className="text-brand-text/70 leading-relaxed mb-12 text-lg">
               To book an initial 15-minute call or request an assessment session, please use the form or email me directly. 
               All enquiries are treated with discretion and confidentiality.
@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
                 disabled={status === 'sending'}
                 className="w-full py-5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-text transition-all shadow-xl hover:shadow-2xl active:scale-95 font-bold"
               >
-                {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
+                {status === 'sending' ? 'Sending…' : 'Send your enquiry'}
               </button>
               </fieldset>
               <div aria-live="polite" aria-atomic="true" className="mt-6 text-sm text-brand-text">

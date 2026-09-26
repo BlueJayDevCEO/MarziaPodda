@@ -1,47 +1,28 @@
 import React from 'react';
+import BrandIcon from './BrandIcon';
 
-const Hero: React.FC = () => {
-  return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-soft">
-      {/* Background Decor - Subtle Teal Gradient */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-brand-mist/20 to-transparent -z-10" />
-      <div className="absolute top-[10%] left-[5%] w-[40rem] h-[40rem] bg-brand-teal/5 rounded-full blur-[120px] -z-10" />
-      
-      <div className="max-w-7xl mx-auto px-6 w-full text-center">
-        <div className="fade-in max-w-5xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <span className="px-4 py-1.5 bg-white text-[10px] uppercase tracking-widest text-brand-teal rounded-full border border-brand-mist shadow-sm">BPC Member</span>
-            <span className="px-4 py-1.5 bg-white text-[10px] uppercase tracking-widest text-brand-teal rounded-full border border-brand-mist shadow-sm">TSP Member</span>
-            <span className="px-4 py-1.5 bg-white text-[10px] uppercase tracking-widest text-brand-teal rounded-full border border-brand-mist shadow-sm">Online & London N19</span>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-brand-text leading-[1.05] mb-12 stagger-1">
-            Psychodynamic Psychotherapy
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-brand-text/70 leading-relaxed max-w-3xl mx-auto mb-16 stagger-2">
-            A reflective, confidential space (online and in London N19) to explore emotional patterns,
-            relationships, and inner experience with curiosity and depth.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row justify-center gap-6 stagger-3">
-            <a 
-              href="#contact" 
-              className="px-12 py-5 bg-brand-teal text-white text-sm uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all text-center shadow-lg hover:shadow-xl active:scale-95"
-            >
-              Arrange a free 15‑min call
-            </a>
-            <a 
-              href="#how-it-works" 
-              className="px-12 py-5 bg-white text-brand-teal border border-brand-mist text-sm uppercase tracking-widest rounded-full hover:bg-brand-soft transition-all text-center shadow-sm"
-            >
-              How therapy works
-            </a>
-          </div>
+const Hero: React.FC = () => (
+  <section className="marz-hero">
+    <div className="marz-hero-inner">
+      <div className="marz-hero-copy">
+        <p className="marz-signature">Therapy with Marz <BrandIcon /></p>
+        <p className="marz-eyebrow">London &amp; Online</p>
+        <h1>Psychodynamic<br />Psychotherapy</h1>
+        <h2>A space to understand yourself more deeply.</h2>
+        <p className="marz-introduction">A reflective, confidential space in London N19 and online to explore emotional patterns, relationships and inner experience with curiosity and depth.</p>
+        <div className="marz-hero-actions">
+          <a className="marz-button" href="#contact">Arrange an introductory call <span aria-hidden="true">→</span></a>
+          <a className="marz-text-link" href="#how-it-works">Explore how I work <span aria-hidden="true">→</span></a>
         </div>
       </div>
-    </section>
-  );
-};
-
+      <div className="marz-hero-note" aria-hidden="true">
+        <BrandIcon kind="leaf" className="marz-leaf marz-leaf-one" />
+        <BrandIcon className="marz-hero-spiral" />
+        <p>Your story<br />matters here.</p>
+        <BrandIcon kind="leaf" className="marz-leaf marz-leaf-two" />
+        <span>Make space for more of yourself.</span>
+      </div>
+    </div>
+  </section>
+);
 export default Hero;
