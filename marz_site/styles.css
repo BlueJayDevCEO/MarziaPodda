@@ -30,3 +30,99 @@ body {
   html { scroll-behavior: auto; }
   .fade-in, .stagger-1, .stagger-2, .stagger-3 { animation: none !important; }
 }
+
+/* Marzia's shared visual identity: a quieter professional home for Therapy with Marz. */
+.site-shell { background: #f7f1e8; color: #08292c; }
+.site-shell section[id] { scroll-margin-top: 105px; }
+.site-shell a:focus-visible, .site-shell button:focus-visible { outline: 3px solid #14777b; outline-offset: 5px; }
+.site-shell .bg-white { background-color: #fffaf4; }
+.marz-nav { position: sticky; top: 0; z-index: 50; background: #002f35; color: #f7f1e8; border-bottom: 1px solid #25d5d033; }
+.marz-nav-inner { max-width: 1280px; margin: auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.marz-professional-name { font: 500 28px/1.1 'Cormorant Garamond', Georgia, serif; }
+.marz-professional-name span { display: block; color: #25d5d0; font: 500 9px/1.5 Inter, sans-serif; text-transform: uppercase; letter-spacing: .15em; margin-top: 7px; }
+.marz-desktop-nav { display: flex; align-items: center; gap: 26px; font-size: 12px; }
+.marz-desktop-nav > a:not(.marz-button):hover { color: #25d5d0; }
+.marz-menu-toggle { display: none; }
+.marz-mobile-nav { display: flex; flex-direction: column; padding: 8px 24px 26px; gap: 22px; }
+.marz-nav a:focus-visible, .marz-nav button:focus-visible, .site-section-dark a:focus-visible { outline-color: #25d5d0; }
+.marz-hero { padding: 66px 24px 80px; overflow: hidden; }
+.marz-hero-inner { max-width: 1232px; margin: auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: center; }
+.marz-signature { color: #bd1b61; font: 600 32px/1.1 Caveat, cursive; display: flex; gap: 12px; align-items: center; margin-bottom: 32px; }
+.marz-signature svg { width: 32px; height: 32px; }
+.marz-eyebrow { color: #07545a; font: 600 11px/1.5 Inter, sans-serif; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 18px; }
+.marz-hero h1 { font: 500 clamp(48px,5.8vw,80px)/1.02 'Cormorant Garamond', Georgia, serif; letter-spacing: -.035em; margin-bottom: 28px; }
+.marz-hero h2 { font: 500 25px/1.3 'Cormorant Garamond', Georgia, serif; max-width: 440px; margin-bottom: 20px; }
+.marz-introduction { max-width: 530px; line-height: 1.8; font-size: 16px; color: #365052; }
+.marz-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 32px; }
+.marz-text-link { color: #07545a; font-size: 13px; border-bottom: 1px solid #07545a; padding-bottom: 6px; }
+.marz-hero-note { min-height: 520px; background: #002f35; color: #25d5d0; border-radius: 48% 48% 3px 3px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 24px; }
+.marz-hero-note p { font: 500 clamp(40px,4.5vw,66px)/.95 Caveat, cursive; transform: rotate(-5deg); position: relative; z-index: 1; }
+.marz-hero-note > span { color: #f7f1e8; font: 400 12px/1.5 Inter, sans-serif; position: absolute; bottom: 30px; }
+.marz-hero-spiral { width: 68px; height: 68px; color: #f52e83; margin-bottom: 34px; }
+.marz-leaf { position: absolute; width: 260px; height: 260px; color: #14777b; opacity: .7; }
+.marz-leaf-one { left: -104px; bottom: -14px; transform: rotate(16deg); }
+.marz-leaf-two { right: -126px; top: 36px; transform: rotate(178deg); }
+.site-shell .marz-button, .site-shell a.bg-brand-teal, .site-shell button[type=submit] { position: relative; isolation: isolate; display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 48px; padding: 16px 26px; color: #001b1f; background: transparent; font: 600 13px/1.5 Inter, sans-serif; text-transform: none; letter-spacing: 0; border-radius: 0; box-shadow: none; text-decoration: none; text-align: center; }
+.site-shell .marz-button::before, .site-shell a.bg-brand-teal::before, .site-shell button[type=submit]::before { content: ''; position: absolute; z-index: -1; inset: 0; background: #f52e83; clip-path: polygon(1% 11%, 16% 7%, 33% 9%, 53% 2%, 73% 8%, 97% 4%, 99% 30%, 98% 59%, 100% 85%, 77% 92%, 61% 89%, 37% 98%, 19% 92%, 0 96%, 2% 58%); }
+.site-shell .marz-button:hover::before, .site-shell a.bg-brand-teal:hover::before, .site-shell button[type=submit]:hover::before { background: #ff4b98; }
+.site-shell button[type=submit]:disabled { cursor: wait; opacity: .7; }
+.site-section-dark { background: #002f35; color: #f7f1e8; }
+.site-section-dark [class*='text-brand-text'] { color: #f7f1e8; }
+.site-section-dark [class*='text-brand-teal'], .site-section-dark .marz-eyebrow { color: #25d5d0; }
+.site-section-dark p { color: #d5e4df; }
+.site-section-dark .bg-white { background: #07545a; }
+.site-section-dark [class*='bg-brand-teal/5'], .site-section-dark [class*='bg-brand-mist/20'] { background: #07545a; }
+.site-section-dark [class*='border-brand'] { border-color: #528083; }
+.marz-support-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 26px; }
+.marz-support-card { border-right: 1px solid #25d5d033; padding-right: 24px; }
+.marz-support-card:last-child { border: 0; padding-right: 0; }
+.marz-area-icon { width: 52px; height: 52px; color: #f52e83; margin-bottom: 24px; }
+.marz-support-card h4 { font: 500 23px/1.15 'Cormorant Garamond', Georgia, serif; }
+.marz-support-card p { font-size: 14px; line-height: 1.7; }
+.marz-about { background: #f7f1e8; }
+.marz-portrait { max-width: 500px; aspect-ratio: 4/5; border-radius: 46% 46% 2px 2px; overflow: hidden; }
+.marz-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.marz-standards { margin-top: 72px; padding-top: 32px; border-top: 1px solid #bccdc5; }
+.marz-standards article { padding: 24px; background: #eceade; border-top: 2px solid #14777b; }
+.marz-standards h5 { font: 600 24px/1.2 'Cormorant Garamond', Georgia, serif; margin-bottom: 12px; }
+.marz-standards p { font-size: 14px; line-height: 1.7; color: #365052; }
+.marz-affirmations { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; margin: 48px 0; }
+.marz-affirmations svg { color: #f52e83; width: 48px; height: 48px; margin: 0 auto 20px; }
+.marz-affirmations h3 { font-size: 14px; line-height: 1.5; }
+.marz-contact { background: #f7f1e8; }
+.marz-contact > div > div > div:last-child { background: #ede9df; border-radius: 4px; box-shadow: none; }
+.marz-contact input, .marz-contact textarea { border-radius: 3px; }
+.marz-contact [class*='text-brand-text/40'] { color: #526766; }
+.site-shell .marz-footer-signature { color: #25d5d0; margin-top: -16px; }
+@media (max-width: 1023px) {
+  .marz-desktop-nav { display: none; }
+  .marz-menu-toggle { display: block; padding: 12px; font-size: 13px; }
+  .marz-hero-inner { gap: 32px; }
+  .marz-hero-note { min-height: 440px; }
+  .marz-support-grid { grid-template-columns: repeat(2,1fr); }
+  .marz-support-card { border: 0; padding: 0 0 24px; }
+}
+@media (max-width: 700px) {
+  .marz-nav-inner { padding: 16px 20px; gap: 10px; }
+  .marz-professional-name { font-size: 25px; }
+  .marz-professional-name span { font-size: 8px; letter-spacing: .08em; }
+  .marz-hero { padding: 36px 24px 48px; }
+  .marz-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .marz-hero h1 { font-size: clamp(39px,10.6vw,62px); }
+  .marz-signature { font-size: 28px; margin-bottom: 28px; }
+  .marz-hero-note { min-height: 310px; border-radius: 45% 45% 2px 2px; }
+  .marz-hero-note p { font-size: 48px; }
+  .marz-hero-spiral { width: 45px; height: 45px; margin-bottom: 22px; }
+  .marz-hero-actions { gap: 22px; }
+  .marz-hero-actions .marz-button { width: 100%; }
+  .marz-support-grid { grid-template-columns: 1fr; }
+  .marz-support-card { border-bottom: 1px solid #25d5d033; padding-bottom: 28px; }
+  .marz-affirmations { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
+  .marz-contact h3 { font-size: 42px; }
+  .site-shell section.py-24 { padding-block: 64px; }
+}
+
+/* Keep anchored headings clear of the sticky professional header. */
+.site-shell section[id], #enquiry-form { scroll-margin-top: 110px; }
+.site-section-dark .border-white { border-color: #002f35; }
+.site-section-dark .rounded-full.bg-brand-teal { background-color: #25d5d0; }

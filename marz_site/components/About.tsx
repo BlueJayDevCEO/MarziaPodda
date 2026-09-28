@@ -1,74 +1,30 @@
-import React from "react";
+import React from 'react';
 
-const About: React.FC = () => {
-  return (
-    <section className="py-24 bg-brand-soft" id="about">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-        <div className="order-2 lg:order-1">
-          <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">
-            Background & Experience
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-8">
-            Marzia Podda
-          </h3>
-
-          <div className="space-y-6 text-brand-text/70 leading-relaxed">
-            <p>
-              I am a qualified{" "}
-              <strong className="text-brand-text font-semibold">
-                Psychodynamic Psychotherapist
-              </strong>{" "}
-              with over 15 years of experience working within the mental health
-              field, including over 13 years in clinical practice.
-            </p>
-            <p>
-              My practice is informed by experience across both primary care
-              (short-term interventions) and specialist services (long-term,
-              in-depth work). I offer psychotherapy in-person in London N19 and
-              online.
-            </p>
-            <p>
-              Having trained at the{" "}
-              <strong className="text-brand-text font-semibold italic">
-                Tavistock and Portman NHS Foundation Trust
-              </strong>
-              , my work is deeply rooted in the psychodynamic tradition, a
-              depth-oriented approach that values curiosity, the exploration of
-              the unconscious, and the relational dynamics that shape our lives.
-            </p>
-            <p>
-              I am a registered member of the British Psychoanalytic Council
-              (BPC) and the Tavistock Society of Psychotherapists (TSP), ensuring
-              that my work is governed by high professional and ethical
-              standards.
-            </p>
+const About: React.FC = () => (
+  <section className="marz-about py-24" id="about">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="marz-portrait"><img src="/marzia-portrait.jpeg" alt="Marzia Podda" width="1086" height="1448" loading="lazy" /></div>
+        <div>
+          <h2 className="marz-eyebrow">About</h2>
+          <h3 className="text-5xl md:text-6xl font-serif text-brand-text mb-8">Hi, I’m Marzia.</h3>
+          <div className="space-y-6 text-brand-text/80 leading-relaxed text-lg">
+            <p>I’m a psychodynamic psychotherapist offering a thoughtful, confidential space to understand what may be happening beneath the surface.</p>
+            <p>My work is interested not only in what you’re experiencing now, but in the relationships, experiences and patterns that have shaped how you relate to yourself and others.</p>
+            <p>I offer psychotherapy in person in London N19 and online, with experience across both primary care and specialist services.</p>
           </div>
-
-          <div className="mt-12">
-            <a
-              href="#contact"
-              className="inline-flex px-8 py-3 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md"
-            >
-              Arrange a consultation
-            </a>
-          </div>
-        </div>
-
-        <div className="order-1 lg:order-2">
-          <div className="relative">
-            <div className="aspect-[5/6] rounded-[4rem] rounded-tl-[15rem] overflow-hidden shadow-2xl bg-brand-mist relative group">
-              <img
-                src="/marz.jpg"
-                alt="Marzia Podda"
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/20 to-transparent" />
-            </div>
-          </div>
+          <a href="#contact" className="marz-button mt-9">Ask about availability <span aria-hidden="true">→</span></a>
         </div>
       </div>
-    </section>
-  );
-};
-
+      <div className="marz-standards">
+        <h4 className="marz-eyebrow">Experience &amp; professional standards</h4>
+        <div className="grid md:grid-cols-3 gap-6">
+          <article><h5>BPC &amp; TSP</h5><p>Registered member of the British Psychoanalytic Council and the Tavistock Society of Psychotherapists.</p></article>
+          <article><h5>Tavistock &amp; Portman</h5><p>Trained at the Tavistock and Portman NHS Foundation Trust in the psychodynamic tradition.</p></article>
+          <article><h5>Clinical experience</h5><p>Over 15 years in mental health, including over 13 years in clinical practice across primary care and specialist services.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 export default About;

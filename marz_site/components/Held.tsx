@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './held.css';
 
 const contactUrl = 'https://www.poddapsychotherapy.com/#contact';
@@ -31,64 +31,110 @@ const supportItems = [
   }
 ];
 
-function SupportIcon({ type }: { type: string }) {
-  const common = { fill: 'none', stroke: 'currentColor', strokeWidth: 2.1, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
-  if (type === 'heart') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path {...common} d="M32 54 10 32C-2 19 6 7 18 8c6 .4 11 4 14 9 3-5 8-9 14-9 12-1 20 11 8 24L32 54Z"/></svg>;
-  }
-  if (type === 'target') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><circle {...common} cx="32" cy="32" r="23"/><circle {...common} cx="32" cy="32" r="12"/><circle {...common} cx="32" cy="32" r="3"/></svg>;
-  }
-  if (type === 'leaf') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path {...common} d="M15 50c8-22 19-34 36-37-1 17-8 31-27 34"/><path {...common} d="M19 47c10-10 19-17 29-25"/><path {...common} d="M24 37C16 30 12 22 12 13c11 2 18 8 20 18"/></svg>;
-  }
-  if (type === 'lotus') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path {...common} d="M32 49c-10-4-17-12-17-21 8 0 14 3 17 9 3-6 9-9 17-9 0 9-7 17-17 21Z"/><path {...common} d="M32 37c-6-5-9-11-8-19 5 2 8 5 8 10 1-5 4-8 8-10 1 8-2 14-8 19Z"/><path {...common} d="M9 36c7 0 12 2 16 8-7 4-14 3-20-2 1-3 2-4 4-6ZM55 36c-7 0-12 2-16 8 7 4 14 3 20-2-1-3-2-4-4-6Z"/></svg>;
-  }
-  return <svg viewBox="0 0 64 64" aria-hidden="true"><path {...common} d="M30 10c-10 0-18 8-18 19 0 6 3 11 7 14v10h14V43c7-2 12-8 12-16 0-10-6-17-15-17Z"/><path {...common} d="M20 26c3-5 9-5 12 0 3-5 9-5 12 0"/><path {...common} d="M32 22c0 4-4 8-4 8s-4-4-4-8c0-5 8-5 8 0Z"/></svg>;
+// CSS windows onto the supplied mockup preserve its original artwork without redrawing it.
+function Artwork({ x, y, width, height, label, className = '' }: {
+  x: number; y: number; width: number; height: number; label?: string; className?: string;
+}) {
+  return <div className={`held-artwork ${className}`} style={{ aspectRatio: `${width} / ${height}` }} role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : true}>
+    <img src="/held-mockup-original.jpg" alt="" draggable={false} style={{ width: `${698 / width * 100}%`, left: `${-x / width * 100}%`, top: `${-y / height * 100}%` }} />
+  </div>;
+}
+
+function ExactLink({ x, y, width, height, href, children }: {
+  x: number; y: number; width: number; height: number; href: string; children: React.ReactNode;
+}) {
+  return <a className="held-exact-link" href={href} style={{ left: `${x / 698 * 100}%`, top: `${y / 1536 * 100}%`, width: `${width / 698 * 100}%`, height: `${height / 1536 * 100}%` }}><span className="held-screen-reader">{children}</span></a>;
+}
+
+function ExactMockup() {
+  return <div className="held-exact">
+    <img className="held-original" src="/held-mockup-original.jpg" width="698" height="1536" alt="" fetchPriority="high" />
+    <header>
+      <ExactLink x={34} y={8} width={108} height={46} href="/held">Therapy with Marz home</ExactLink>
+      <nav aria-label="Held page navigation">
+        <ExactLink x={169} y={14} width={36} height={30} href="#exact-home">Home</ExactLink>
+        <ExactLink x={213} y={14} width={34} height={30} href="https://www.poddapsychotherapy.com/#about">About</ExactLink>
+        <ExactLink x={255} y={14} width={53} height={30} href="#exact-space">How I work</ExactLink>
+        <ExactLink x={317} y={14} width={80} height={30} href="#exact-support">Areas of support</ExactLink>
+        <ExactLink x={402} y={14} width={37} height={30} href="https://www.poddapsychotherapy.com/#process">FAQs</ExactLink>
+      </nav>
+      <ExactLink x={534} y={10} width={150} height={44} href={contactUrl}>Book a free intro call</ExactLink>
+    </header>
+    <main>
+      <section id="exact-home" className="held-exact-section" style={{ top: '3.776%' }}>
+        <div className="held-screen-reader">
+          <p>Therapy with Marz. Your story matters here.</p>
+          <h1>Psychodynamic Psychotherapy</h1>
+          <p>A safe, non-judgemental space to explore relationships, identity, sexuality and the patterns that keep repeating, welcoming different ways of loving, relating, thinking and being.</p>
+          <p>Queer, kink, neurodiversity, ENM.</p>
+        </div>
+      </section>
+      <ExactLink x={28} y={383} width={218} height={49} href={contactUrl}>Book a free 15-minute call</ExactLink>
+      <section id="exact-support" className="held-exact-section" style={{ top: '30.599%' }}>
+        <div className="held-screen-reader"><h2>Areas of support</h2>{supportItems.map(item => <article key={item.icon}><h3>{item.title.replaceAll('\n', ' ')}</h3><p>{item.body}</p></article>)}</div>
+      </section>
+      <section id="exact-space" className="held-exact-section" style={{ top: '47.917%' }}>
+        <div className="held-screen-reader"><h2>A different kind of therapy space</h2>
+          <p>I offer a warm, confidential and non-judgemental space where you can bring your whole self. My approach is psychodynamic, which means we explore how past experiences and recurring patterns show up in your present life, helping you make sense of what’s going on and find new ways of relating to yourself and others.</p>
+          <p>I welcome LGBTQIA+ people, kink/BDSM communities, neurodiverse clients and non-monogamous relationships. Together we can explore the parts of your life that matter to you, at a pace that feels right.</p>
+        </div>
+      </section>
+      <ExactLink x={378} y={997} width={237} height={54} href={contactUrl}>Book a free 15-minute call</ExactLink>
+      <section className="held-screen-reader"><h2>Make space for more of yourself</h2><p>In person: North London. Online: worldwide.</p><p>Free 15-minute introductory call. A chance to meet, ask questions and see if it feels like a good fit.</p></section>
+      <section className="held-screen-reader"><h2>Ready to take the next step?</h2><p>If you’re curious about working together, I offer a free 15-minute call to see if it feels like a good fit. There’s no pressure and no obligation.</p></section>
+      <ExactLink x={98} y={1416} width={228} height={54} href={contactUrl}>Book a free intro call</ExactLink>
+    </main>
+  </div>;
 }
 
 const Held: React.FC = () => {
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = 'Therapy with Marz | Psychodynamic Psychotherapy';
+    return () => { document.title = previousTitle; };
+  }, []);
+
   return (
     <div className="held-page">
+      <ExactMockup />
+      <div className="held-mobile">
       <header className="held-nav">
         <a className="held-logo" href="/held" aria-label="Therapy with Marz home">
-          Therapy<br/><span>with Marz</span><b>◎</b>
+          <Artwork x={34} y={8} width={108} height={46} />
         </a>
         <nav className="held-nav-links" aria-label="Held page navigation">
           <a href="#held-home">Home</a>
-          <a href="#held-space">About</a>
+          <a href="https://www.poddapsychotherapy.com/#about">About</a>
           <a href="#held-space">How I work</a>
           <a href="#held-support">Areas of support</a>
-          <a href="https://www.poddapsychotherapy.com/#contact">FAQs</a>
+          <a href="https://www.poddapsychotherapy.com/#process">FAQs</a>
         </nav>
-        <a className="held-brush held-brush-small" href={contactUrl}>Book a free intro call <span>→</span></a>
+        <a className="held-brush held-brush-small" href={contactUrl}><Artwork x={534} y={10} width={150} height={44} /><span className="held-screen-reader">Book a free intro call</span></a>
       </header>
 
       <main>
         <section className="held-hero" id="held-home">
           <div className="held-hero-copy">
-            <p className="held-kicker-script">Therapy<br/>with Marz <span>◎</span></p>
+            <Artwork x={29} y={78} width={299} height={145} label="Therapy with Marz" className="held-brand-art" />
             <h1>Psychodynamic Psychotherapy</h1>
             <p className="held-intro">A safe, non-judgemental space to explore relationships, identity, sexuality and the patterns that keep repeating, welcoming different ways of loving, relating, thinking and being.</p>
             <div className="held-tags" aria-label="Inclusive practice areas">
-              <span>Queer</span><i>♥</i><span>Kink</span><i>♥</i><span>Neurodiversity</span><i>♥</i><span>ENM</span>
+              <span>Queer</span><i aria-hidden="true">♥</i><span>Kink</span><i aria-hidden="true">♥</i><span>Neurodiversity</span><i aria-hidden="true">♥</i><span>ENM</span>
             </div>
-            <a className="held-brush" href={contactUrl}>Book a free 15-minute call <span>→</span></a>
+            <a className="held-brush" href={contactUrl}><Artwork x={28} y={383} width={218} height={49} /><span className="held-screen-reader">Book a free 15-minute call</span></a>
           </div>
-          <div className="held-hero-art" role="img" aria-label="Illustrated therapy artwork">
-            <img src="/held-hero-tiny.webp" alt="" />
-            <p>Your<br/>story<br/>matters<br/>here <span>♡</span></p>
+          <div className="held-hero-art">
+            <Artwork x={334} y={59} width={364} height={411} label="Illustrated woman and black cat surrounded by foliage. Your story matters here." />
           </div>
         </section>
 
         <section className="held-support" id="held-support">
           <div className="held-shell">
-            <h2 className="held-script-heading">Areas of support</h2>
+            <h2 className="held-script-heading"><Artwork x={28} y={479} width={226} height={47} /><span className="held-screen-reader">Areas of support</span></h2>
             <div className="held-support-grid">
-              {supportItems.map((item) => (
+              {supportItems.map((item, index) => (
                 <article className="held-support-card" key={item.title}>
-                  <div className="held-support-icon"><SupportIcon type={item.icon} /></div>
+                  <Artwork x={54 + index * 133} y={528} width={60} height={52} className="held-support-icon" />
                   <h3>{item.title.split('\n').map((line, i) => <React.Fragment key={i}>{line}{i < item.title.split('\n').length - 1 && <br/>}</React.Fragment>)}</h3>
                   <p>{item.body}</p>
                 </article>
@@ -98,43 +144,44 @@ const Held: React.FC = () => {
         </section>
 
         <section className="held-space" id="held-space">
-          <div className="held-space-image"><img src="/held-room-tiny.webp" alt="A warm, plant-filled therapy space" /></div>
+          <div className="held-space-image"><Artwork x={0} y={736} width={348} height={325} label="A pink therapy room with leafy plants and a black cat resting on the sofa" /></div>
           <div className="held-space-copy">
-            <h2 className="held-script-heading">A different kind<br/>of therapy space</h2>
+            <h2 className="held-script-heading"><Artwork x={356} y={744} width={236} height={70} /><span className="held-screen-reader">A different kind of therapy space</span></h2>
             <p>I offer a warm, confidential and non-judgemental space where you can bring your whole self. My approach is psychodynamic, which means we explore how past experiences and recurring patterns show up in your present life, helping you make sense of what’s going on and find new ways of relating to yourself and others.</p>
             <p>I welcome LGBTQIA+ people, kink/BDSM communities, neurodiverse clients and non-monogamous relationships. Together we can explore the parts of your life that matter to you, at a pace that feels right.</p>
-            <a className="held-brush" href={contactUrl}>Book a free 15-minute call <span>→</span></a>
+            <a className="held-brush" href={contactUrl}><Artwork x={28} y={383} width={218} height={49} /><span className="held-screen-reader">Book a free 15-minute call</span></a>
           </div>
         </section>
 
         <section className="held-banner" aria-label="Practice details">
-          <p className="held-banner-script">Make space<br/>for more of yourself</p>
+          <Artwork x={150} y={1061} width={398} height={102} label="Make space for more of yourself" />
         </section>
 
         <section className="held-practical">
           <div className="held-practical-item">
-            <div className="held-practical-icon">⌖</div>
+            <Artwork x={34} y={1183} width={43} height={52} className="held-practical-icon" />
             <div><strong>In person</strong><span>North London</span></div>
           </div>
           <div className="held-practical-item">
-            <div className="held-practical-icon">▱</div>
+            <Artwork x={262} y={1183} width={45} height={52} className="held-practical-icon" />
             <div><strong>Online</strong><span>Worldwide</span></div>
           </div>
           <div className="held-practical-item">
-            <div className="held-practical-icon">▦</div>
+            <Artwork x={480} y={1183} width={45} height={52} className="held-practical-icon" />
             <div><strong>Free 15-minute<br/>introductory call</strong><small>A chance to meet, ask questions and see if it feels like a good fit.</small></div>
           </div>
         </section>
 
         <section className="held-final">
           <div className="held-final-copy">
-            <h2 className="held-script-heading">Ready to take<br/>the next step?</h2>
+            <h2 className="held-script-heading"><Artwork x={97} y={1281} width={212} height={78} /><span className="held-screen-reader">Ready to take the next step?</span></h2>
             <p>If you’re curious about working together, I offer a free 15-minute call to see if it feels like a good fit. There’s no pressure and no obligation.</p>
-            <a className="held-brush" href={contactUrl}>Book a free intro call <span>→</span></a>
+            <a className="held-brush" href={contactUrl}><Artwork x={98} y={1416} width={228} height={54} /><span className="held-screen-reader">Book a free intro call</span></a>
           </div>
-          <div className="held-final-image"><img src="/held-pond-tiny.webp" alt="Calm water garden with lotus flowers" /></div>
+          <div className="held-final-image"><Artwork x={349} y={1270} width={349} height={266} label="Sunlight falling onto a water garden with lotus flowers" /></div>
         </section>
       </main>
+      </div>
     </div>
   );
 };
