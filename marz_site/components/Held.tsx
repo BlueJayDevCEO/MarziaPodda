@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './held.css';
 
 const contactUrl = 'https://www.poddapsychotherapy.com/#contact';
@@ -53,10 +53,10 @@ function ExactMockup() {
       <ExactLink x={34} y={8} width={108} height={46} href="/held">Therapy with Marz home</ExactLink>
       <nav aria-label="Held page navigation">
         <ExactLink x={169} y={14} width={36} height={30} href="#exact-home">Home</ExactLink>
-        <ExactLink x={213} y={14} width={34} height={30} href="#exact-space">About</ExactLink>
+        <ExactLink x={213} y={14} width={34} height={30} href="https://www.poddapsychotherapy.com/#about">About</ExactLink>
         <ExactLink x={255} y={14} width={53} height={30} href="#exact-space">How I work</ExactLink>
         <ExactLink x={317} y={14} width={80} height={30} href="#exact-support">Areas of support</ExactLink>
-        <ExactLink x={402} y={14} width={37} height={30} href={contactUrl}>FAQs</ExactLink>
+        <ExactLink x={402} y={14} width={37} height={30} href="https://www.poddapsychotherapy.com/#process">FAQs</ExactLink>
       </nav>
       <ExactLink x={534} y={10} width={150} height={44} href={contactUrl}>Book a free intro call</ExactLink>
     </header>
@@ -88,6 +88,12 @@ function ExactMockup() {
 }
 
 const Held: React.FC = () => {
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = 'Therapy with Marz | Psychodynamic Psychotherapy';
+    return () => { document.title = previousTitle; };
+  }, []);
+
   return (
     <div className="held-page">
       <ExactMockup />
@@ -98,10 +104,10 @@ const Held: React.FC = () => {
         </a>
         <nav className="held-nav-links" aria-label="Held page navigation">
           <a href="#held-home">Home</a>
-          <a href="#held-space">About</a>
+          <a href="https://www.poddapsychotherapy.com/#about">About</a>
           <a href="#held-space">How I work</a>
           <a href="#held-support">Areas of support</a>
-          <a href="https://www.poddapsychotherapy.com/#contact">FAQs</a>
+          <a href="https://www.poddapsychotherapy.com/#process">FAQs</a>
         </nav>
         <a className="held-brush held-brush-small" href={contactUrl}><Artwork x={534} y={10} width={150} height={44} /><span className="held-screen-reader">Book a free intro call</span></a>
       </header>
@@ -113,12 +119,12 @@ const Held: React.FC = () => {
             <h1>Psychodynamic Psychotherapy</h1>
             <p className="held-intro">A safe, non-judgemental space to explore relationships, identity, sexuality and the patterns that keep repeating, welcoming different ways of loving, relating, thinking and being.</p>
             <div className="held-tags" aria-label="Inclusive practice areas">
-              <span>Queer</span><i>♥</i><span>Kink</span><i>♥</i><span>Neurodiversity</span><i>♥</i><span>ENM</span>
+              <span>Queer</span><i aria-hidden="true">♥</i><span>Kink</span><i aria-hidden="true">♥</i><span>Neurodiversity</span><i aria-hidden="true">♥</i><span>ENM</span>
             </div>
             <a className="held-brush" href={contactUrl}><Artwork x={28} y={383} width={218} height={49} /><span className="held-screen-reader">Book a free 15-minute call</span></a>
           </div>
-          <div className="held-hero-art" role="img" aria-label="Illustrated therapy artwork">
-            <Artwork x={300} y={59} width={398} height={411} label="Illustrated woman and black cat surrounded by foliage. Your story matters here." />
+          <div className="held-hero-art">
+            <Artwork x={334} y={59} width={364} height={411} label="Illustrated woman and black cat surrounded by foliage. Your story matters here." />
           </div>
         </section>
 
@@ -126,9 +132,9 @@ const Held: React.FC = () => {
           <div className="held-shell">
             <h2 className="held-script-heading"><Artwork x={28} y={479} width={226} height={47} /><span className="held-screen-reader">Areas of support</span></h2>
             <div className="held-support-grid">
-              {supportItems.map((item) => (
+              {supportItems.map((item, index) => (
                 <article className="held-support-card" key={item.title}>
-                  <Artwork x={54 + supportItems.indexOf(item) * 133} y={528} width={60} height={52} className="held-support-icon" />
+                  <Artwork x={54 + index * 133} y={528} width={60} height={52} className="held-support-icon" />
                   <h3>{item.title.split('\n').map((line, i) => <React.Fragment key={i}>{line}{i < item.title.split('\n').length - 1 && <br/>}</React.Fragment>)}</h3>
                   <p>{item.body}</p>
                 </article>
