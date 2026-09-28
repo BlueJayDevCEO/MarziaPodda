@@ -15,23 +15,30 @@ import Held from './components/Held';
 const App: React.FC = () => {
   const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
 
-  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [hash, setHash] = useState(() => window.location.hash);
+  const showPrivacy = hash === '#privacy';
 
   useEffect(() => {
-    // Handle hash routing for single page navigation
-    const handleHash = () => {
-      const hash = window.location.hash;
-      if (hash === '#privacy') {
-        setShowPrivacy(true);
-        window.scrollTo(0, 0);
-      } else {
-        setShowPrivacy(false);
-      }
-    };
+    const handleHash = () => setHash(window.location.hash);
     window.addEventListener('hashchange', handleHash);
-    handleHash();
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  useEffect(() => {
+    // Wait for the selected view and fonts before positioning direct links.
+    let cancelled = false;
+    const positionSection = () => {
+      if (cancelled) return;
+      if (!hash || showPrivacy) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+      }
+    };
+    positionSection();
+    void document.fonts.ready.then(positionSection);
+    return () => { cancelled = true; };
+  }, [hash, showPrivacy]);
 
   if (normalizedPath === '/held') {
     return <Held />;

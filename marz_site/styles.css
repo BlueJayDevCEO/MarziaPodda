@@ -121,3 +121,8 @@ body {
   .marz-contact h3 { font-size: 42px; }
   .site-shell section.py-24 { padding-block: 64px; }
 }
+
+/* Keep anchored headings clear of the sticky professional header. */
+.site-shell section[id], #enquiry-form { scroll-margin-top: 110px; }
+.site-section-dark .border-white { border-color: #002f35; }
+.site-section-dark .rounded-full.bg-brand-teal { background-color: #25d5d0; }

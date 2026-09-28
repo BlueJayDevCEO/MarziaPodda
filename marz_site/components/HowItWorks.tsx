@@ -3,7 +3,7 @@ import BrandIcon from './BrandIcon';
 
 const HowItWorks: React.FC = () => {
   return (
-    <section className="site-section-dark py-24" id="how-it-works">
+    <section className="py-24 bg-brand-soft" id="how-it-works">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <BrandIcon className="marz-area-icon mx-auto" />

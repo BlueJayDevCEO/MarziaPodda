@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import BrandIcon from './BrandIcon';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -41,10 +42,11 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">London & Online</h2>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Arrange a free 15-minute introductory call</h2>
             <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-10">Make space for more of yourself.</h3>
+            <BrandIcon kind="lotus" className="marz-area-icon" />
             <p className="text-brand-text/70 leading-relaxed mb-12 text-lg">
-              To book an initial 15-minute call or request an assessment session, please use the form or email me directly. 
+              To arrange a free 15-minute introductory call or request an assessment session, please use the form or email me directly.
               All enquiries are treated with discretion and confidentiality.
             </p>
 
@@ -104,8 +106,8 @@ const Contact: React.FC = () => {
 
           <div className="bg-brand-soft p-6 sm:p-10 md:p-14 min-w-0 rounded-[3.5rem] border border-brand-mist/50 shadow-xl relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl -z-10" />
-            
-            <form onSubmit={handleSubmit} aria-busy={status === 'sending'}>
+
+            <form id="enquiry-form" onSubmit={handleSubmit} aria-busy={status === 'sending'}>
               <fieldset disabled={status === 'sending'} className="space-y-8 min-w-0">
               <div className="sr-only" aria-hidden="true">
                 <label htmlFor="website">Leave this field empty</label>
@@ -114,8 +116,8 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Your Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="name"
                     name="name"
                     autoComplete="name"
@@ -128,8 +130,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Email Address</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     id="email"
                     name="email"
                     autoComplete="email"
@@ -142,14 +144,14 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-4">Preferred Session Format</label>
+              <fieldset>
+                <legend className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-4">Preferred Session Format</legend>
                 <div className="flex flex-wrap gap-5">
                   {['Online', 'In-person', 'Undecided'].map((opt) => (
                     <label key={opt} className="flex items-center gap-3 cursor-pointer group">
-                      <input 
-                        type="radio" 
-                        name="format" 
+                      <input
+                        type="radio"
+                        name="format"
                         className="w-5 h-5 text-brand-teal border-brand-mist focus:ring-brand-teal"
                         checked={formData.format === opt.toLowerCase()}
                         onChange={() => setFormData({...formData, format: opt.toLowerCase()})}
@@ -158,11 +160,11 @@ const Contact: React.FC = () => {
                     </label>
                   ))}
                 </div>
-              </div>
+              </fieldset>
 
               <div>
                 <label htmlFor="message" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Enquiry Message</label>
-                <textarea 
+                <textarea
                   id="message"
                   name="message"
                   required
@@ -179,7 +181,7 @@ const Contact: React.FC = () => {
                 By submitting this form, you acknowledge that your message will be sent via email. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
               </div>
 
-              <button 
+              <button
                 type="submit"
                 disabled={status === 'sending'}
                 className="w-full py-5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-text transition-all shadow-xl hover:shadow-2xl active:scale-95 font-bold"

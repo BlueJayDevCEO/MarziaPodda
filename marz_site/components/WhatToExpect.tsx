@@ -21,11 +21,11 @@ const steps = [
 
 const WhatToExpect: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-soft" id="process">
+    <section className="site-section-dark py-24" id="process">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-20">
           <div className="lg:col-span-1">
-            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Practical Process</h2>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">London &amp; Online</h2>
             <h3 className="text-4xl font-serif text-brand-text mb-8">What to Expect</h3>
             <p className="text-brand-text/70 leading-relaxed mb-10">
               The therapeutic journey is unique to every individual. We begin with a collaborative exploration of your needs and the pace that feels safe and productive for you.
