@@ -90,6 +90,9 @@ body {
 .marz-affirmations svg { color: #f52e83; width: 48px; height: 48px; margin: 0 auto 20px; }
 .marz-affirmations h3 { font-size: 14px; line-height: 1.5; }
 .marz-contact { background: #f7f1e8; }
+.marz-space-divider { background: #002f35; color: #f7f1e8; min-height: 190px; margin: 0 0 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; }
+.marz-space-divider-icon { width: 48px; height: 48px; color: #f52e83; }
+.marz-space-divider p { font: 500 28px/1.15 Caveat, cursive; }
 .marz-contact > div > div > div:last-child { background: #ede9df; border-radius: 4px; box-shadow: none; }
 .marz-contact input, .marz-contact textarea { border-radius: 3px; }
 .marz-contact [class*='text-brand-text/40'] { color: #526766; }
@@ -119,6 +122,8 @@ body {
   .marz-support-card { border-bottom: 1px solid #25d5d033; padding-bottom: 28px; }
   .marz-affirmations { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
   .marz-contact h3 { font-size: 42px; }
+  .marz-space-divider { min-height: 150px; margin-inline: -2px; margin-bottom: 48px; }
+  .marz-space-divider p { font-size: 26px; }
   .site-shell section.py-24 { padding-block: 64px; }
 }
 

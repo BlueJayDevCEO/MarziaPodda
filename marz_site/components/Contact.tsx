@@ -40,10 +40,13 @@ const Contact: React.FC = () => {
   return (
     <section className="marz-contact py-24" id="contact">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="marz-space-divider" aria-hidden="true">
+          <BrandIcon className="marz-space-divider-icon" />
+          <p>Make space for more of yourself.</p>
+        </div>
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
             <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Arrange a free 15-minute introductory call</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-10">Make space for more of yourself.</h3>
             <BrandIcon kind="lotus" className="marz-area-icon" />
             <p className="text-brand-text/70 leading-relaxed mb-12 text-lg">
               To arrange a free 15-minute introductory call or request an assessment session, please use the form or email me directly.
