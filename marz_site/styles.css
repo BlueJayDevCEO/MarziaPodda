@@ -86,7 +86,7 @@ body {
 .marz-standards article { padding: 24px; background: #eceade; border-top: 2px solid #14777b; }
 .marz-standards h5 { font: 600 24px/1.2 'Cormorant Garamond', Georgia, serif; margin-bottom: 12px; }
 .marz-standards p { font-size: 14px; line-height: 1.7; color: #365052; }
-.marz-affirmations { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; margin: 48px 0; }
+.marz-affirmations { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin: 48px 0; }
 .marz-affirmations svg { color: #f52e83; width: 48px; height: 48px; margin: 0 auto 20px; }
 .marz-affirmations h3 { font-size: 14px; line-height: 1.5; }
 .marz-contact { background: #f7f1e8; }

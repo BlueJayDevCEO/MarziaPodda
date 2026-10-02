@@ -2,7 +2,6 @@ import React from 'react';
 import BrandIcon, { BrandIconKind } from './BrandIcon';
 const affirmations: { title: string; icon: BrandIconKind }[] = [
   {title:'Queer-affirming',icon:'heart'},
-  {title:'Kink-aware',icon:'spiral'},
   {title:'Neurodiversity-affirming',icon:'lotus'},
   {title:'ENM & relationship-diverse',icon:'leaf'},
 ];
