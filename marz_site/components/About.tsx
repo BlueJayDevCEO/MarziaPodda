@@ -11,7 +11,7 @@ const About: React.FC = () => (
           <div className="space-y-6 text-brand-text/80 leading-relaxed text-lg">
             <p>I’m a psychodynamic psychotherapist offering a thoughtful, confidential space to understand what may be happening beneath the surface.</p>
             <p>My work is interested not only in what you’re experiencing now, but in the relationships, experiences and patterns that have shaped how you relate to yourself and others.</p>
-            <p>I offer psychotherapy in person in London N19 and online, with experience across both primary care and specialist services.</p>
+            <p>I offer psychotherapy in person in London N19 and online.</p>
           </div>
           <a href="#contact" className="marz-button mt-9">Ask about availability <span aria-hidden="true">→</span></a>
         </div>
@@ -21,7 +21,7 @@ const About: React.FC = () => (
         <div className="grid md:grid-cols-3 gap-6">
           <article><h5>BPC &amp; TSP</h5><p>Registered member of the British Psychoanalytic Council and the Tavistock Society of Psychotherapists.</p></article>
           <article><h5>Tavistock &amp; Portman</h5><p>Trained at the Tavistock and Portman NHS Foundation Trust in the psychodynamic tradition.</p></article>
-          <article><h5>Clinical experience</h5><p>Over 15 years in mental health, including over 13 years in clinical practice across primary care and specialist services.</p></article>
+          <article><h5>Clinical experience</h5><p>Over 20 years in mental health, including 13 years in clinical practice across NHS specialist psychotherapy services and community projects in the charity sector.</p></article>
         </div>
       </div>
     </div>
