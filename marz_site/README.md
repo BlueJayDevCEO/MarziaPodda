@@ -6,7 +6,7 @@ A premium, modern, and high-trust landing page built for Marzia Podda, Psychodyn
 ## Technical Details
 - **Framework**: React + Vite (single-page site with anchor navigation and a lightweight privacy view)
 - **Styling**: Tailwind CSS (ivory, petrol teal, hot pink and aquamarine palette)
-- **Typography**: Cormorant Garamond (Serif), Inter (Sans-serif)
+- **Typography**: Caveat (handwritten headings matching the blue story panel), Inter (body text)
 - **Performance**: Lazy loading images, lightweight structure
 - **Accessibility**: Semantic HTML, high contrast, mobile-responsive
 

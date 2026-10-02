@@ -38,7 +38,7 @@ body {
 .site-shell .bg-white { background-color: #fffaf4; }
 .marz-nav { position: sticky; top: 0; z-index: 50; background: #002f35; color: #f7f1e8; border-bottom: 1px solid #25d5d033; }
 .marz-nav-inner { max-width: 1280px; margin: auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.marz-professional-name { font: 500 28px/1.1 'Cormorant Garamond', Georgia, serif; }
+.marz-professional-name { font: 500 32px/1.1 Caveat, cursive; }
 .marz-professional-name span { display: block; color: #25d5d0; font: 500 9px/1.5 Inter, sans-serif; text-transform: uppercase; letter-spacing: .15em; margin-top: 7px; }
 .marz-desktop-nav { display: flex; align-items: center; gap: 26px; font-size: 12px; }
 .marz-desktop-nav > a:not(.marz-button):hover { color: #25d5d0; }
@@ -50,8 +50,8 @@ body {
 .marz-signature { color: #bd1b61; font: 600 32px/1.1 Caveat, cursive; display: flex; gap: 12px; align-items: center; margin-bottom: 32px; }
 .marz-signature svg { width: 32px; height: 32px; }
 .marz-eyebrow { color: #07545a; font: 600 11px/1.5 Inter, sans-serif; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 18px; }
-.marz-hero h1 { font: 500 clamp(48px,5.8vw,80px)/1.02 'Cormorant Garamond', Georgia, serif; letter-spacing: -.035em; margin-bottom: 28px; }
-.marz-hero h2 { font: 500 25px/1.3 'Cormorant Garamond', Georgia, serif; max-width: 440px; margin-bottom: 20px; }
+.marz-hero h1 { font: 500 clamp(48px,5.8vw,80px)/1.02 Caveat, cursive; letter-spacing: 0; margin-bottom: 28px; }
+.marz-hero h2 { font: 500 28px/1.3 Caveat, cursive; max-width: 440px; margin-bottom: 20px; }
 .marz-introduction { max-width: 530px; line-height: 1.8; font-size: 16px; color: #365052; }
 .marz-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 32px; }
 .marz-text-link { color: #07545a; font-size: 13px; border-bottom: 1px solid #07545a; padding-bottom: 6px; }
@@ -77,14 +77,14 @@ body {
 .marz-support-card { border-right: 1px solid #25d5d033; padding-right: 24px; }
 .marz-support-card:last-child { border: 0; padding-right: 0; }
 .marz-area-icon { width: 52px; height: 52px; color: #f52e83; margin-bottom: 24px; }
-.marz-support-card h4 { font: 500 23px/1.15 'Cormorant Garamond', Georgia, serif; }
+.marz-support-card h4 { font: 500 28px/1.15 Caveat, cursive; }
 .marz-support-card p { font-size: 14px; line-height: 1.7; }
 .marz-about { background: #f7f1e8; }
 .marz-portrait { max-width: 500px; aspect-ratio: 4/5; border-radius: 46% 46% 2px 2px; overflow: hidden; }
 .marz-portrait img { width: 100%; height: 100%; object-fit: cover; }
 .marz-standards { margin-top: 72px; padding-top: 32px; border-top: 1px solid #bccdc5; }
 .marz-standards article { padding: 24px; background: #eceade; border-top: 2px solid #14777b; }
-.marz-standards h5 { font: 600 24px/1.2 'Cormorant Garamond', Georgia, serif; margin-bottom: 12px; }
+.marz-standards h5 { font: 600 28px/1.2 Caveat, cursive; margin-bottom: 12px; }
 .marz-standards p { font-size: 14px; line-height: 1.7; color: #365052; }
 .marz-affirmations { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin: 48px 0; }
 .marz-affirmations svg { color: #f52e83; width: 48px; height: 48px; margin: 0 auto 20px; }
@@ -104,7 +104,7 @@ body {
 }
 @media (max-width: 700px) {
   .marz-nav-inner { padding: 16px 20px; gap: 10px; }
-  .marz-professional-name { font-size: 25px; }
+  .marz-professional-name { font-size: 28px; }
   .marz-professional-name span { font-size: 8px; letter-spacing: .08em; }
   .marz-hero { padding: 36px 24px 48px; }
   .marz-hero-inner { grid-template-columns: 1fr; gap: 40px; }

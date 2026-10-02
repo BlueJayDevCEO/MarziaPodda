@@ -21,7 +21,7 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        serif: ['Caveat', 'cursive'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Noto Sans', 'sans-serif'],
       },
       boxShadow: {
