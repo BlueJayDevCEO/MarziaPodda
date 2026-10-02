@@ -4,5 +4,5 @@ temp_interactive_push.bat
 node_modules/
 dist/
 .vercel/
-.env*
 !.env.example
+config.bat

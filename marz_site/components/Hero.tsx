@@ -20,7 +20,6 @@ const Hero: React.FC = () => (
         <BrandIcon className="marz-hero-spiral" />
         <p>Your story<br />matters here.</p>
         <BrandIcon kind="leaf" className="marz-leaf marz-leaf-two" />
-        <span>Make space for more of yourself.</span>
       </div>
     </div>
   </section>
