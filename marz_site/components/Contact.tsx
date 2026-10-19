@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BrandIcon from './BrandIcon';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,14 +21,18 @@ const Contact: React.FC = () => {
     setFeedback('Please send your enquiry from your email app. If it did not open, email poddapsychotherapy@gmail.com directly. Your details remain here so you can copy them.');
   };
   return (
-    <section className="py-24 bg-white" id="contact">
+    <section className="marz-contact py-24" id="contact">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="marz-space-divider" aria-hidden="true">
+          <BrandIcon className="marz-space-divider-icon" />
+          <p>Make space for more of yourself.</p>
+        </div>
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
-            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Start your journey</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-brand-text mb-10">Request a Consultation</h3>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Arrange a free 15-minute introductory call</h2>
+            <BrandIcon kind="lotus" className="marz-area-icon" />
             <p className="text-brand-text/70 leading-relaxed mb-12 text-lg">
-              To book an initial 15-minute call or request an assessment session, please use the form or email me directly. 
+              To arrange a free 15-minute introductory call or request an assessment session, please use the form or email me directly.
               All enquiries are treated with discretion and confidentiality.
             </p>
 
@@ -38,7 +43,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-brand-teal font-bold mb-1">Email Enquiry</p>
-                  <a href="mailto:poddapsychotherapy@gmail.com" className="text-brand-text font-serif text-xl hover:text-brand-teal transition-colors">poddapsychotherapy@gmail.com</a>
+                  <a href="mailto:poddapsychotherapy@gmail.com" className="break-all text-brand-text font-serif text-xl hover:text-brand-teal transition-colors">poddapsychotherapy@gmail.com</a>
                 </div>
               </div>
 
@@ -85,17 +90,20 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-brand-soft p-10 md:p-14 rounded-[3.5rem] border border-brand-mist/50 shadow-xl relative">
+          <div className="bg-brand-soft p-6 sm:p-10 md:p-14 min-w-0 rounded-[3.5rem] border border-brand-mist/50 shadow-xl relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-teal/5 rounded-full blur-3xl -z-10" />
-            
-            <form onSubmit={handleSubmit} className="space-y-8">
+
+            <form id="enquiry-form" onSubmit={handleSubmit}>
+              <fieldset className="space-y-8 min-w-0">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Your Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="name"
-                    maxLength={100}
+                    name="name"
+                    autoComplete="name"
+                    maxLength={120}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
                     value={formData.name}
@@ -104,9 +112,11 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Email Address</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     id="email"
+                    name="email"
+                    autoComplete="email"
                     maxLength={254}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
@@ -116,14 +126,14 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-4">Preferred Session Format</label>
+              <fieldset>
+                <legend className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-4">Preferred Session Format</legend>
                 <div className="flex flex-wrap gap-5">
                   {['Online', 'In-person', 'Undecided'].map((opt) => (
                     <label key={opt} className="flex items-center gap-3 cursor-pointer group">
-                      <input 
-                        type="radio" 
-                        name="format" 
+                      <input
+                        type="radio"
+                        name="format"
                         className="w-5 h-5 text-brand-teal border-brand-mist focus:ring-brand-teal"
                         checked={formData.format === opt.toLowerCase()}
                         onChange={() => setFormData({...formData, format: opt.toLowerCase()})}
@@ -132,12 +142,13 @@ const Contact: React.FC = () => {
                     </label>
                   ))}
                 </div>
-              </div>
+              </fieldset>
 
               <div>
                 <label htmlFor="message" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Enquiry Message</label>
-                <textarea 
+                <textarea
                   id="message"
+                  name="message"
                   required
                   maxLength={5000}
                   rows={5}
@@ -152,13 +163,15 @@ const Contact: React.FC = () => {
                 This opens your default email app with your enquiry filled in. Review the draft and press Send there. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
               </div>
 
-              <button 
+              <button
                 type="submit"
+
                 className="w-full py-5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-text transition-all shadow-xl hover:shadow-2xl active:scale-95 font-bold"
               >
                 Open Email App
               </button>
-              <p role="status" aria-live="polite" className="text-sm text-brand-text">{feedback}</p>
+              </fieldset>
+              <p role="status" aria-live="polite" className="mt-6 text-sm text-brand-text">{feedback}</p>
             </form>
           </div>
         </div>

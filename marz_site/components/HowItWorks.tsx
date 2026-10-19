@@ -1,12 +1,14 @@
 import React from 'react';
+import BrandIcon from './BrandIcon';
 
 const HowItWorks: React.FC = () => {
   return (
-    <section className="py-24 bg-white" id="how-it-works">
+    <section className="py-24 bg-brand-soft" id="how-it-works">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
+          <BrandIcon className="marz-area-icon mx-auto" />
           <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">The Clinical Approach</h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-brand-text">The Psychodynamic Path</h3>
+          <h3 className="text-4xl md:text-5xl font-serif text-brand-text">Understanding the patterns beneath the surface</h3>
         </div>
 
         <div className="space-y-12">
@@ -47,7 +49,7 @@ const HowItWorks: React.FC = () => {
               Psychodynamic work is a commitment to yourself. Whether you seek short-term focus on a specific issue or longer-term open-ended depth, we discuss the most appropriate pathway collaboratively.
             </p>
             <a href="#contact" className="inline-block border-b-2 border-brand-teal pb-1 text-xs uppercase tracking-widest text-brand-teal font-bold hover:text-brand-muted hover:border-brand-muted transition-all relative z-10">
-              Begin your exploration
+              Ask about availability →
             </a>
           </div>
         </div>

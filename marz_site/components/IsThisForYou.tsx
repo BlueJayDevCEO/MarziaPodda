@@ -1,52 +1,30 @@
 import React from 'react';
+import BrandIcon, { BrandIconKind } from './BrandIcon';
 
-const challenges = [
-  {
-    title: 'Feeling Stuck / Repeating Cycles',
-    desc: 'Finding yourself in the same difficult situations or internal states despite wanting change.'
-  },
-  {
-    title: 'Relationship Difficulties',
-    desc: 'Exploring how early experiences and attachment styles influence how you relate to others today.'
-  },
-  {
-    title: 'Anxiety and Low Mood',
-    desc: 'Working through deep-seated feelings of dread, emptiness, or persistent emotional weight.'
-  },
-  {
-    title: 'Transitions and Identity',
-    desc: 'Navigating life changes, loss, or questioning your sense of self and purpose in the world.'
-  },
-  {
-    title: 'Trauma and its impact',
-    desc: 'Understanding how past trauma manifests in current emotional and physical symptoms.'
-  },
-  {
-    title: 'Self-Understanding',
-    desc: 'A desire for deeper insight into your inner world and a more authentic way of living.'
-  }
+const challenges: { title: string; desc: string; icon: BrandIconKind }[] = [
+  { title: 'Anxiety, stress & life transitions', desc: 'Exploring what’s overwhelming you and finding new ways to cope and feel more like yourself.', icon: 'head' },
+  { title: 'Relationships, intimacy & attachment', desc: 'Understanding patterns in your relationships and building more fulfilling connections.', icon: 'heart' },
+  { title: 'Identity, sexuality & self-exploration', desc: 'A space to explore who you are, what feels right for you and the many ways of being and relating.', icon: 'lotus' },
+  { title: 'Trauma, grief & loss', desc: 'Making sense of past experiences and finding ways to live with more choice and self-compassion.', icon: 'spiral' },
+  { title: 'Self-esteem, shame & feeling stuck', desc: 'Exploring what holds you back and moving towards a kinder, more authentic relationship with yourself.', icon: 'leaf' },
 ];
 
 const IsThisForYou: React.FC = () => {
   return (
-    <section className="py-24 bg-white" id="challenges">
+    <section className="site-section-dark py-24" id="challenges">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Initial Indicators</h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-brand-text">Is this for you?</h3>
+          <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Areas of support</h2>
+          <h3 className="text-4xl md:text-5xl font-serif text-brand-text">You might be here because…</h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="marz-support-grid">
           {challenges.map((item, i) => (
             <div 
               key={i} 
-              className="p-10 rounded-[2.5rem] bg-brand-soft border border-brand-mist/50 hover:border-brand-teal hover:shadow-xl transition-all duration-500 group relative overflow-hidden"
+              className="marz-support-card"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <svg className="w-12 h-12 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
-                </svg>
-              </div>
+              <BrandIcon kind={item.icon} className="marz-area-icon" />
               <h4 className="text-xl font-serif text-brand-text mb-5 relative z-10">{item.title}</h4>
               <p className="text-brand-text/70 leading-relaxed text-sm relative z-10">{item.desc}</p>
             </div>
@@ -55,13 +33,13 @@ const IsThisForYou: React.FC = () => {
 
         <div className="mt-16 text-center">
           <p className="text-brand-text/70 leading-relaxed max-w-2xl mx-auto mb-8">
-            If any of this resonates, we can begin with a brief, free 15‑minute call to see whether psychotherapy with me feels like a good fit.
+            If any of this resonates, we can begin with a brief, free 15-minute call to see whether psychotherapy with me feels like a good fit.
           </p>
           <a
             href="#contact"
             className="inline-flex px-10 py-4 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-muted transition-all shadow-md hover:shadow-lg active:scale-95"
           >
-            Arrange a call
+            Arrange an introductory call →
           </a>
         </div>
 

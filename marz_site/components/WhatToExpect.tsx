@@ -21,11 +21,11 @@ const steps = [
 
 const WhatToExpect: React.FC = () => {
   return (
-    <section className="py-24 bg-brand-soft" id="process">
+    <section className="site-section-dark py-24" id="process">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-20">
           <div className="lg:col-span-1">
-            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">Practical Process</h2>
+            <h2 className="text-xs uppercase tracking-[0.4em] text-brand-teal font-bold mb-4">London &amp; Online</h2>
             <h3 className="text-4xl font-serif text-brand-text mb-8">What to Expect</h3>
             <p className="text-brand-text/70 leading-relaxed mb-10">
               The therapeutic journey is unique to every individual. We begin with a collaborative exploration of your needs and the pace that feels safe and productive for you.
@@ -45,7 +45,7 @@ const WhatToExpect: React.FC = () => {
               </div>
               <div className="p-6 bg-white rounded-2xl border border-brand-mist/50 shadow-sm group hover:border-brand-teal transition-colors">
                 <p className="text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-2">Response Time</p>
-                <p className="text-brand-text text-sm italic">I reply personally, usually within 1–2 working days.</p>
+                <p className="text-brand-text text-sm italic">I reply personally, usually within 1-2 working days.</p>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const WhatToExpect: React.FC = () => {
                 href="#contact"
                 className="inline-block border-b-2 border-brand-teal pb-1 text-xs uppercase tracking-widest text-brand-teal font-bold hover:text-brand-muted hover:border-brand-muted transition-all"
               >
-                Arrange an initial consultation
+                Arrange a free 15-minute call →
               </a>
             </div>
           </div>
