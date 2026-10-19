@@ -8,14 +8,17 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:poddapsychotherapy@gmail.com?subject=Therapy Enquiry from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nPreferred Format: ${formData.format}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
-  };
+  const [feedback, setFeedback] = useState('');
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!e.currentTarget.reportValidity()) return;
+    const body = `Name: ${formData.name.trim()}\r\nEmail: ${formData.email.trim()}\r\nPreferred Format: ${formData.format}\r\n\r\nMessage:\r\n${formData.message.trim()}`;
+    const draft = document.createElement('a');
+    draft.href = `mailto:poddapsychotherapy@gmail.com?subject=${encodeURIComponent('Therapy Enquiry')}&body=${encodeURIComponent(body)}`;
+    draft.click();
+    setFeedback('Please send your enquiry from your email app. If it did not open, email poddapsychotherapy@gmail.com directly. Your details remain here so you can copy them.');
+  };
   return (
     <section className="py-24 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-6">
@@ -92,6 +95,7 @@ const Contact: React.FC = () => {
                   <input 
                     type="text" 
                     id="name"
+                    maxLength={100}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
                     value={formData.name}
@@ -103,6 +107,7 @@ const Contact: React.FC = () => {
                   <input 
                     type="email" 
                     id="email"
+                    maxLength={254}
                     required
                     className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm"
                     value={formData.email}
@@ -133,6 +138,8 @@ const Contact: React.FC = () => {
                 <label htmlFor="message" className="block text-[10px] uppercase tracking-widest text-brand-teal font-bold mb-3">Enquiry Message</label>
                 <textarea 
                   id="message"
+                  required
+                  maxLength={5000}
                   rows={5}
                   className="w-full px-5 py-4 rounded-2xl border border-brand-mist focus:outline-none focus:ring-4 focus:ring-brand-teal/10 focus:border-brand-teal bg-white transition-all text-sm resize-none"
                   placeholder="Tell me a little about what brings you to therapy."
@@ -142,15 +149,16 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="text-[10px] text-brand-text/40 leading-relaxed italic border-l-2 border-brand-mist pl-4">
-                By submitting this form, you acknowledge that your message will be sent via email. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
+                This opens your default email app with your enquiry filled in. Review the draft and press Send there. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
               </div>
 
               <button 
                 type="submit"
                 className="w-full py-5 bg-brand-teal text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-text transition-all shadow-xl hover:shadow-2xl active:scale-95 font-bold"
               >
-                Send Enquiry
+                Open Email App
               </button>
+              <p role="status" aria-live="polite" className="text-sm text-brand-text">{feedback}</p>
             </form>
           </div>
         </div>

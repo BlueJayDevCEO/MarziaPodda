@@ -16,6 +16,7 @@ A premium, modern, and high-trust landing page built for Marzia Podda, Psychodyn
    - Clone the repository.
    - Run `npm install` to install dependencies.
    - Run `npm run dev` to start the local development server.
+   - See [EMAIL_SETUP.md](./EMAIL_SETUP.md) for the email-app enquiry flow. No email integration, account credentials, or server endpoint is required.
 
 2. **Deployment (Vercel)**:
    - Connect your repository to Vercel.
