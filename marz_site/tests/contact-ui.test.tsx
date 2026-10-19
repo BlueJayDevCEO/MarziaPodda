@@ -34,17 +34,18 @@ test('enquiry opens an encoded email draft only for valid input and retains deta
     await submit();
     assert.equal(drafts.length, 1);
     const draft = new URL(drafts[0]);
-    assert.equal(draft.protocol, 'mailto:');
-    assert.equal(draft.pathname, 'poddapsychotherapy@gmail.com');
-    assert.deepEqual([...draft.searchParams.keys()], ['subject', 'body']);
-    assert.equal(draft.searchParams.get('subject'), 'Therapy Enquiry');
+    assert.equal(draft.protocol, 'https:');
+    assert.equal(draft.hostname, 'mail.google.com');
+    assert.equal(draft.searchParams.get('to'), 'poddapsychotherapy@gmail.com');
+    assert.equal(document.querySelectorAll('button[type="submit"]' ).length, 2);
+    assert.equal(draft.searchParams.get('su'), 'Therapy Enquiry');
     const body = draft.searchParams.get('body')!;
     for (const value of Object.values(values)) assert.ok(body.includes(value));
     assert.match(body, /Preferred Format: online/);
     assert.equal(document.querySelector<HTMLInputElement>('#name')!.value, values.name);
-    assert.match(document.querySelector('[role="status"]')!.textContent!, /press|send your enquiry from your email app/i);
+    assert.match(document.querySelector('[role="status"]')!.textContent!, /send your enquiry in your email draft/i);
     assert.doesNotMatch(document.querySelector('[role="status"]')!.textContent!, /has been sent/i);
-    assert.equal(document.querySelector('button[type="submit"]')!.textContent!.trim(), 'Open Email App');
+    assert.equal(document.querySelector('button[type="submit"]')!.textContent!.trim(), 'Open in Gmail');
     for (const client of ['gmail', 'outlook']) {
       await submit(client);
       const url = new URL(drafts.at(-1)!);
