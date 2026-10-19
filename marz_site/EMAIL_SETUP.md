@@ -7,3 +7,5 @@ The visitor reviews the draft and presses Send in their email app. The website c
 No SMTP server, API, Gmail App Password, environment variables or deployment secrets are required. Any previously prepared local email environment file is unused and can be removed by the owner. No production settings have been changed.
 
 Verify with npm test, npm run typecheck and npm run build. To manually check the device integration, complete the form, select Open Email App, and confirm the recipient and draft details in the configured mail app. Opening a draft does not send it.
+
+Visitors without a configured default email app can select **Open in Gmail** or **Open in Outlook** to open a browser compose window. Both choices include the same recipient, subject and enquiry body and require the visitor to review and send the draft. If the provider asks for sign-in, sign in and retry from the retained form if necessary. No message is sent automatically.

@@ -15,10 +15,25 @@ const Contact: React.FC = () => {
     e.preventDefault();
     if (!e.currentTarget.reportValidity()) return;
     const body = `Name: ${formData.name.trim()}\r\nEmail: ${formData.email.trim()}\r\nPreferred Format: ${formData.format}\r\n\r\nMessage:\r\n${formData.message.trim()}`;
+    const submitter = (e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
+    const client = submitter?.value || 'default';
     const draft = document.createElement('a');
     draft.href = `mailto:poddapsychotherapy@gmail.com?subject=${encodeURIComponent('Therapy Enquiry')}&body=${encodeURIComponent(body)}`;
+    if (client === 'gmail') {
+      const params = new URLSearchParams({ view: 'cm', fs: '1', to: 'poddapsychotherapy@gmail.com', su: 'Therapy Enquiry', body });
+      draft.href = `https://mail.google.com/mail/?${params}`;
+    } else if (client === 'outlook') {
+      const params = new URLSearchParams({ to: 'poddapsychotherapy@gmail.com', subject: 'Therapy Enquiry', body });
+      draft.href = `https://outlook.live.com/mail/0/deeplink/compose?${params}`;
+    }
+    if (client !== 'default') {
+      draft.target = '_blank';
+      draft.rel = 'noopener noreferrer';
+    }
+    document.body.appendChild(draft);
     draft.click();
-    setFeedback('Please send your enquiry from your email app. If it did not open, email poddapsychotherapy@gmail.com directly. Your details remain here so you can copy them.');
+    draft.remove();
+    setFeedback('Review your draft and press Send in your email app. If nothing opened, try Gmail or Outlook below, or email poddapsychotherapy@gmail.com directly. Your details remain here so you can copy them.');
   };
   return (
     <section className="marz-contact py-24" id="contact">
@@ -160,7 +175,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="text-[10px] text-brand-text/40 leading-relaxed italic border-l-2 border-brand-mist pl-4">
-                This opens your default email app with your enquiry filled in. Review the draft and press Send there. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
+                Choose your email app below to open a draft with your enquiry filled in. For Gmail or Outlook in your browser, use the matching button. Review the draft and press Send there. Your data will be used strictly for responding to your enquiry in accordance with professional privacy standards.
               </div>
 
               <button
@@ -170,6 +185,10 @@ const Contact: React.FC = () => {
               >
                 Open Email App
               </button>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <button type="submit" name="emailClient" value="gmail" className="underline underline-offset-4 font-bold text-brand-teal">Open in Gmail</button>
+                <button type="submit" name="emailClient" value="outlook" className="underline underline-offset-4 font-bold text-brand-teal">Open in Outlook</button>
+              </div>
               </fieldset>
               <p role="status" aria-live="polite" className="mt-6 text-sm text-brand-text">{feedback}</p>
             </form>
